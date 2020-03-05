@@ -11,10 +11,13 @@ function List(props) {
       <ul> {props.cards.map((card) => {
         return <Card
           key={card.id}
+          id = {card.id}
           title={card.title}
-          content={card.content} />
+          content={card.content} 
+          onDeleteItem={props.onDeleteItem}/>
       })}</ul>
-      <button type="button">delete</button>
+      <button onClick={() => props.onAddItem(props.listId)} type="button">add</button>
+      <button onClick={() => props.onDeleteList(props.listId)} type="button">delete</button>
 
 
 
